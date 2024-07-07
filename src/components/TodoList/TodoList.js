@@ -1,8 +1,7 @@
 import React from "react";
 import TodoItem from "../TodoItem";
 
-export default function TodoList({todos,onToggle,onRemove}){
-    console.log('todos :' + todos);
+const TodoList = React.memo(({todos,onToggle,onRemove}) => {
     const todolist = todos.map(todo=>(
         <TodoItem
         key={todo.id}
@@ -23,4 +22,6 @@ export default function TodoList({todos,onToggle,onRemove}){
             {todolist}
         </div>
     )
-};
+});
+
+export default TodoList;
